@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b2ltp4h6kmbq8"]
+
+[ext_resource type="Script" uid="uid://cwndqwrhf5sah" path="res://scripts/enemies/enemy_controller.gd" id="1_78s5d"]
+[ext_resource type="Texture2D" uid="uid://bfmvmsgogi3mc" path="res://art/kenney_space.png" id="2_ni5ms"]
+[ext_resource type="Script" uid="uid://cg34ld4cg4sc6" path="res://scripts/bullet_emitter_controller.gd" id="3_uebra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv3m2"]
+atlas = ExtResource("2_ni5ms")
+region = Rect2(0, 1, 64.07678, 30.648445)
+
+[node name="GameRoot" type="Node" unique_id=327347738]
+
+[node name="Menus" type="Node" parent="." unique_id=1641329486]
+
+[node name="GameHud" type="Node" parent="." unique_id=1848923520]
+
+[node name="PlayRoot" type="Node" parent="." unique_id=1581402430]
+
+[node name="Lane1" type="Node2D" parent="PlayRoot" unique_id=23809641]
+position = Vector2(0, 32)
+
+[node name="Lane2" type="Node2D" parent="PlayRoot" unique_id=1504657751]
+position = Vector2(0, 64)
+
+[node name="Lane3" type="Node2D" parent="PlayRoot" unique_id=858297656]
+position = Vector2(0, 96)
+
+[node name="Lane4" type="Node2D" parent="PlayRoot" unique_id=1918078876]
+position = Vector2(0, 128)
+
+[node name="Lane5" type="Node2D" parent="PlayRoot" unique_id=365308239]
+position = Vector2(0, 160)
+
+[node name="EnemyController" type="Node" parent="PlayRoot" unique_id=1920774532]
+
+[node name="BasicEnemy" type="Node2D" parent="PlayRoot/EnemyController" unique_id=571470667]
+position = Vector2(352, 40)
+script = ExtResource("1_78s5d")
+
+[node name="Sprite" type="Sprite2D" parent="PlayRoot/EnemyController/BasicEnemy" unique_id=206177367]
+texture = SubResource("AtlasTexture_mv3m2")
+
+[node name="BulletController" type="Node2D" parent="PlayRoot/EnemyController/BasicEnemy" unique_id=320090225]
+script = ExtResource("3_uebra")

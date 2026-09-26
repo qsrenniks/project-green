@@ -1,0 +1,3 @@
+[submodule "godot-misc"]
+	path = godot-misc
+	url = https://github.com/qsrenniks/godot-misc.git

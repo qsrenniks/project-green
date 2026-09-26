@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameCommon="*uid://bwvj7rvykksyj"
+CommonFunctions="*uid://sn82wtrk1y10"
 
 [debug]
 

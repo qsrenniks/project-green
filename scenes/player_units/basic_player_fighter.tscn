@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dkfy7r8l5kpnd"]
+
+[ext_resource type="Texture2D" uid="uid://bfmvmsgogi3mc" path="res://art/kenney_space.png" id="1_s4pji"]
+[ext_resource type="Script" uid="uid://cg34ld4cg4sc6" path="res://addons/godot-misc/scripts/bullet_emitter_controller.gd" id="2_chcck"]
+[ext_resource type="PackedScene" uid="uid://db23wln0xuin6" path="res://scenes/bullets/enemy_bullet.tscn" id="3_chcck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uebra"]
+atlas = ExtResource("1_s4pji")
+region = Rect2(52, 245, 48, 47)
+
+[node name="BasicPlayerFighter" type="Node2D" unique_id=665366825]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=225305125]
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_uebra")
+
+[node name="BulletEmitterController" type="Node" parent="." unique_id=2045660896 node_paths=PackedStringArray("emit_roots")]
+script = ExtResource("2_chcck")
+emit_cooldown_time = 1.0
+emit_roots = [NodePath("../TurretRoot1"), NodePath("../TurretRoot2")]
+bullet_scene = ExtResource("3_chcck")
+
+[node name="TurretRoot1" type="Node2D" parent="." unique_id=1316934072]
+position = Vector2(-8, 16)
+
+[node name="TurretRoot2" type="Node2D" parent="." unique_id=1055923298]
+position = Vector2(-8, -16)

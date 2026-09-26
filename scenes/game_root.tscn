@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwndqwrhf5sah" path="res://scripts/enemies/enemy_controller.gd" id="1_78s5d"]
 [ext_resource type="Texture2D" uid="uid://bfmvmsgogi3mc" path="res://art/kenney_space.png" id="2_ni5ms"]
-[ext_resource type="Script" uid="uid://cg34ld4cg4sc6" path="res://scripts/bullet_emitter_controller.gd" id="3_uebra"]
+[ext_resource type="Script" uid="uid://cg34ld4cg4sc6" path="res://addons/godot-misc/scripts/bullet_emitter_controller.gd" id="3_uebra"]
+[ext_resource type="PackedScene" uid="uid://dkfy7r8l5kpnd" path="res://scenes/player_units/basic_player_fighter.tscn" id="4_jb3nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv3m2"]
 atlas = ExtResource("2_ni5ms")
@@ -16,29 +17,72 @@ region = Rect2(0, 1, 64.07678, 30.648445)
 
 [node name="PlayRoot" type="Node" parent="." unique_id=1581402430]
 
-[node name="Lane1" type="Node2D" parent="PlayRoot" unique_id=23809641]
-position = Vector2(0, 32)
-
-[node name="Lane2" type="Node2D" parent="PlayRoot" unique_id=1504657751]
-position = Vector2(0, 64)
-
-[node name="Lane3" type="Node2D" parent="PlayRoot" unique_id=858297656]
-position = Vector2(0, 96)
-
-[node name="Lane4" type="Node2D" parent="PlayRoot" unique_id=1918078876]
-position = Vector2(0, 128)
-
-[node name="Lane5" type="Node2D" parent="PlayRoot" unique_id=365308239]
-position = Vector2(0, 160)
-
 [node name="EnemyController" type="Node" parent="PlayRoot" unique_id=1920774532]
 
-[node name="BasicEnemy" type="Node2D" parent="PlayRoot/EnemyController" unique_id=571470667]
-position = Vector2(352, 40)
+[node name="BasicEnemyFighter" type="Node2D" parent="PlayRoot/EnemyController" unique_id=571470667]
+position = Vector2(664, 152)
 script = ExtResource("1_78s5d")
 
-[node name="Sprite" type="Sprite2D" parent="PlayRoot/EnemyController/BasicEnemy" unique_id=206177367]
+[node name="Sprite" type="Sprite2D" parent="PlayRoot/EnemyController/BasicEnemyFighter" unique_id=206177367]
 texture = SubResource("AtlasTexture_mv3m2")
 
-[node name="BulletController" type="Node2D" parent="PlayRoot/EnemyController/BasicEnemy" unique_id=320090225]
+[node name="BulletEmitterController" type="Node" parent="PlayRoot/EnemyController/BasicEnemyFighter" unique_id=984897707]
 script = ExtResource("3_uebra")
+
+[node name="GameBoard" type="Node" parent="PlayRoot" unique_id=247382763]
+
+[node name="Column1" type="Node2D" parent="PlayRoot/GameBoard" unique_id=1066117316]
+
+[node name="Lane1" type="Node2D" parent="PlayRoot/GameBoard/Column1" unique_id=23809641]
+position = Vector2(0, 32)
+
+[node name="BasicPlayerFighter" parent="PlayRoot/GameBoard/Column1/Lane1" unique_id=665366825 instance=ExtResource("4_jb3nc")]
+position = Vector2(288, 256)
+
+[node name="Lane2" type="Node2D" parent="PlayRoot/GameBoard/Column1" unique_id=1504657751]
+position = Vector2(0, 64)
+
+[node name="Lane3" type="Node2D" parent="PlayRoot/GameBoard/Column1" unique_id=858297656]
+position = Vector2(0, 96)
+
+[node name="Lane4" type="Node2D" parent="PlayRoot/GameBoard/Column1" unique_id=1918078876]
+position = Vector2(0, 128)
+
+[node name="Lane5" type="Node2D" parent="PlayRoot/GameBoard/Column1" unique_id=365308239]
+position = Vector2(0, 160)
+
+[node name="Column2" type="Node2D" parent="PlayRoot/GameBoard" unique_id=1612219004]
+position = Vector2(64, 0)
+
+[node name="Lane1" type="Node2D" parent="PlayRoot/GameBoard/Column2" unique_id=1908858465]
+position = Vector2(0, 32)
+
+[node name="Lane2" type="Node2D" parent="PlayRoot/GameBoard/Column2" unique_id=1772836577]
+position = Vector2(0, 64)
+
+[node name="Lane3" type="Node2D" parent="PlayRoot/GameBoard/Column2" unique_id=2075728050]
+position = Vector2(0, 96)
+
+[node name="Lane4" type="Node2D" parent="PlayRoot/GameBoard/Column2" unique_id=572355084]
+position = Vector2(0, 128)
+
+[node name="Lane5" type="Node2D" parent="PlayRoot/GameBoard/Column2" unique_id=1876735770]
+position = Vector2(0, 160)
+
+[node name="Column3" type="Node2D" parent="PlayRoot/GameBoard" unique_id=1356102965]
+position = Vector2(128, 0)
+
+[node name="Lane1" type="Node2D" parent="PlayRoot/GameBoard/Column3" unique_id=908595013]
+position = Vector2(0, 32)
+
+[node name="Lane2" type="Node2D" parent="PlayRoot/GameBoard/Column3" unique_id=133397328]
+position = Vector2(0, 64)
+
+[node name="Lane3" type="Node2D" parent="PlayRoot/GameBoard/Column3" unique_id=1185439537]
+position = Vector2(0, 96)
+
+[node name="Lane4" type="Node2D" parent="PlayRoot/GameBoard/Column3" unique_id=913704873]
+position = Vector2(0, 128)
+
+[node name="Lane5" type="Node2D" parent="PlayRoot/GameBoard/Column3" unique_id=1867635573]
+position = Vector2(0, 160)

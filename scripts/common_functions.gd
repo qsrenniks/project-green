@@ -5,6 +5,6 @@ static func get_play_root_from_node(node: Node) -> PlayRoot:
 	while parent:
 		if parent is PlayRoot:
 			return parent
-		parent = parnet.get_parent()
+		parent = parent.get_parent()
 	return null
 

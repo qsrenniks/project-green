@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfmvmsgogi3mc" path="res://art/kenney_space.png" id="1_s4pji"]
 [ext_resource type="Script" uid="uid://cg34ld4cg4sc6" path="res://addons/godot-misc/scripts/bullet_emitter_controller.gd" id="2_chcck"]
-[ext_resource type="PackedScene" uid="uid://db23wln0xuin6" path="res://scenes/bullets/enemy_bullet.tscn" id="3_chcck"]
+[ext_resource type="PackedScene" uid="uid://dpy3lhia3lka6" path="res://scenes/bullets/player_bullet.tscn" id="3_chcck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uebra"]
 atlas = ExtResource("1_s4pji")

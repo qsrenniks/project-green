@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dpy3lhia3lka6"]
 
+[ext_resource type="Script" uid="uid://cg8pd2mol2e8f" path="res://scripts/bullet_controller.gd" id="1_48eg6"]
 [ext_resource type="Texture2D" uid="uid://bfmvmsgogi3mc" path="res://art/kenney_space.png" id="1_om8qi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sunn7"]
@@ -7,13 +8,18 @@ atlas = ExtResource("1_om8qi")
 region = Rect2(112, 484, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7iwgk"]
-radius = 7.071068
+radius = 5.0
 
 [node name="Bullet" type="RigidBody2D" unique_id=1825836036]
 collision_layer = 4
 collision_mask = 2
+gravity_scale = 0.0
+continuous_cd = 1
+script = ExtResource("1_48eg6")
+bullet_speed = 1500.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=195872951]
+scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_sunn7")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=908051942]
